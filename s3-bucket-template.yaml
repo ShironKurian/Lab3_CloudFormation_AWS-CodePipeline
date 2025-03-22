@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: '2010-09-09'
 Parameters:
   BucketName:
     Type: String
-    Description: Lab3-Shiron
+    Description: my-unique-bucket-name-shironkurian-12345
   Versioning:
     Type: String
     AllowedValues:
