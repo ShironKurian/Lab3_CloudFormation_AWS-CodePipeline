@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: '2010-09-09'
 Parameters:
   BucketName:
     Type: String
-    Description: Lab 3 - CloudFormation + AWS CodePipeline
+    Description: Lab3-Shiron
   Versioning:
     Type: String
     AllowedValues:
