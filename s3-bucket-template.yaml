@@ -2,14 +2,14 @@ AWSTemplateFormatVersion: '2010-09-09'
 Parameters:
   BucketName:
     Type: String
-    Description: "S3 Bucket name"
-  VersioningEnabled:
+    Description: Lab 3 - CloudFormation + AWS CodePipeline
+  Versioning:
     Type: String
-    Default: "false"
     AllowedValues:
-      - "true"
-      - "false"
-    Description: "Enable or disable versioning"
+      - Enabled
+      - Suspended
+    Default: Enabled
+    Description: S3 bucket versioning state.
 
 Resources:
   MyS3Bucket:
@@ -17,4 +17,4 @@ Resources:
     Properties:
       BucketName: !Ref BucketName
       VersioningConfiguration:
-        Status: !Ref VersioningEnabled
+        Status: !Ref Versioning
