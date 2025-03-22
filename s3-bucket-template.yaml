@@ -1,20 +1,27 @@
 AWSTemplateFormatVersion: '2010-09-09'
+Description: "CloudFormation template to create an S3 bucket with versioning"
+
 Parameters:
   BucketName:
+    Description: "Shiron2025Lab3"
     Type: String
-    Description: my-unique-bucket-name-shironkurian-12345
-  Versioning:
+  VersioningStatus:
+    Description: "Versioning status (Enabled or Suspended)"
     Type: String
     AllowedValues:
       - Enabled
       - Suspended
-    Default: Enabled
-    Description: S3 bucket versioning state.
+    Default: Suspended
 
 Resources:
-  MyS3Bucket:
-    Type: 'AWS::S3::Bucket'
+  S3Bucket:
+    Type: AWS::S3::Bucket
     Properties:
       BucketName: !Ref BucketName
       VersioningConfiguration:
-        Status: !Ref Versioning
+        Status: !Ref VersioningStatus
+
+Outputs:
+  BucketName:
+    Description: "The name of the created bucket"
+    Value: !Ref S3Bucket
